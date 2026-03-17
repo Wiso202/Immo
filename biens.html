@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Biens Immobiliers | Benin Immo Luxe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* Style des filtres */
+        .filter-container {
+            padding: 40px 8% 20px;
+            text-align: center;
+        }
+
+        .filter-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Animation d'apparition */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">BENIN<span>IMMO</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="biens.html" class="active">Propriétés</a></li>
+            <li><a href="publier.html">Vendre</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="tel:+2290140434120" class="btn btn-primary">Appeler</a>
+    </nav>
+
+    <header style="background: var(--bg-light); padding: 80px 8% 40px; text-align: center;">
+        <h1 style="color: var(--primary-color); font-size: 2.5rem;">Explorez nos <span style="color: var(--accent-color);">Opportunités</span></h1>
+        <p style="color: var(--text-light); margin-top: 10px;">Trouvez le terrain ou la maison qui correspond à votre projet.</p>
+        
+        <div class="filter-container">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">Tous les biens</button>
+                <button class="filter-btn" data-filter="maison">Maisons / Villas</button>
+                <button class="filter-btn" data-filter="appartement">Appartements</button>
+                <button class="filter-btn" data-filter="terrain">Terrains</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="property-grid" id="property-list">
+        
+        <div class="property-card" data-category="maison">
+            <div class="property-image">
+                <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Villa">
+                <span class="badge">Vente</span>
+            </div>
+            <div class="property-info">
+                <p class="property-price">85.000.000 FCFA</p>
+                <h3>Villa F4 - Fidjrossè</h3>
+                <div class="property-features">
+                    <span>🛏️ 4 ch</span> <span>🚿 3 dch</span> <span>📐 350m²</span>
+                </div>
+                <a href="details.html" class="btn btn-primary" style="width: 100%; margin-top: 20px; text-align: center;">Détails</a>
+            </div>
+        </div>
+
+        <div class="property-card" data-category="appartement">
+            <div class="property-image">
+                <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Appartement">
+                <span class="badge" style="background: var(--secondary-color);">Location</span>
+            </div>
+            <div class="property-info">
+                <p class="property-price">250.000 FCFA/mois</p>
+                <h3>Appartement Meublé</h3>
+                <div class="property-features">
+                    <span>🛏️ 2 ch</span> <span>❄️ Climatisé</span>
+                </div>
+                <a href="details.html" class="btn btn-primary" style="width: 100%; margin-top: 20px; text-align: center;">Détails</a>
+            </div>
+        </div>
+
+        <div class="property-card" data-category="terrain">
+            <div class="property-image">
+                <img src="https://images.pexels.com/photos/440660/pexels-photo-440660.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Terrain">
+                <span class="badge" style="background: #e67e22;">Terrain</span>
+            </div>
+            <div class="property-info">
+                <p class="property-price">12.000.000 FCFA</p>
+                <h3>Parcelle 500m² - Ouidah</h3>
+                <div class="property-features">
+                    <span>📐 500m²</span> <span>📜 TF disponible</span>
+                </div>
+                <a href="details.html" class="btn btn-primary" style="width: 100%; margin-top: 20px; text-align: center;">Détails</a>
+            </div>
+        </div>
+
+        <div class="property-card" data-category="maison">
+            <div class="property-image">
+                <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Villa">
+                <span class="badge">Vente</span>
+            </div>
+            <div class="property-info">
+                <p class="property-price">45.000.000 FCFA</p>
+                <h3>Villa Neuve - Calavi</h3>
+                <div class="property-features">
+                    <span>🛏️ 3 ch</span> <span>🚿 2 dch</span> <span>📐 200m²</span>
+                </div>
+                <a href="details.html" class="btn btn-primary" style="width: 100%; margin-top: 20px; text-align: center;">Détails</a>
+            </div>
+        </div>
+
+    </main>
+
+    <a href="https://wa.me/2290140434120" class="whatsapp-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30">
+    </a>
+
+    <script src="js/filter.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+/* --- VARIABLES DE MARQUE --- */
+:root {
+    --primary-color: #1B4332;    /* Vert Immobilier (Confiance) */
+    --accent-color: #D4A373;     /* Doré/Sable (Prestige) */
+    --secondary-color: #2D6A4F;  /* Vert Clair */
+    --text-dark: #1b1b1b;        /* Texte principal */
+    --text-light: #6c757d;       /* Texte secondaire */
+    --bg-light: #f8f9fa;         /* Fond des sections */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul { list-style: none; }
+
+img { max-width: 100%; display: block; }

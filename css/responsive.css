@@ -1,0 +1,78 @@
+/* --- TABLETTES (Moins de 1024px) --- */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+    
+    .property-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes au lieu de 3 */
+        padding: 40px 5%;
+    }
+
+    h1 { font-size: 3rem; }
+}
+
+/* --- SMARTPHONES LARGES (Moins de 768px) --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Cache le menu classique pour un futur menu mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .property-grid {
+        grid-template-columns: 1fr; /* 1 seule colonne (plein écran) */
+    }
+
+    .res-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* On réduit les paddings pour gagner de la place */
+    section {
+        padding: 60px 5%;
+    }
+}
+
+/* --- PETITS SMARTPHONES (Moins de 480px) --- */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        width: 100%; /* Les boutons prennent toute la largeur pour cliquer facilement avec le pouce */
+        text-align: center;
+    }
+
+    .property-card {
+        margin-bottom: 20px;
+    }
+
+    .property-price {
+        font-size: 1.2rem;
+    }
+
+    /* On ajuste le bouton WhatsApp pour qu'il ne cache pas trop de texte */
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+}
+
+/* --- OPTIMISATION POUR LE MODE PAYSAGE --- */
+@media (max-height: 500px) {
+    .hero {
+        height: 120vh; /* On agrandit la hauteur si le téléphone est à l'horizontale */
+    }
+}
