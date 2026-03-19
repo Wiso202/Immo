@@ -69,20 +69,20 @@
     </div>
 </nav>
 
-   <header class="hero" style="padding-top: 150px; padding-bottom: 80px; text-align: center; background: radial-gradient(circle at top right, #eef2ff, #ffffff);">
-    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 5%;">
-        <span style="background: rgba(99, 102, 241, 0.1); color: var(--primary); padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Expertise Immobilière au Bénin</span>
+  <header style="background: var(--bg-light); padding: 80px 8% 40px; text-align: center;">
+        <h1 style="color: var(--primary-color); font-size: 2.5rem;">Explorez nos <span style="color: var(--accent-color);">Opportunités</span></h1>
+        <p style="color: var(--text-light); margin-top: 10px;">Trouvez le terrain ou la maison qui correspond à votre projet.</p>
         
-        <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-top: 20px;" class="text-gradient">Trouvez la propriété de vos rêves.</h1>
-        
-        <p style="color: var(--text-muted); font-size: 1.2rem; margin: 25px 0 40px;">Découvrez une sélection exclusive de villas, parcelles et appartements de luxe à Cotonou, Calavi et Ouidah.</p>
-        
-        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-            <a href="biens.html" class="btn btn-primary">Explorer les biens</a>
-            <a href="publier.html" class="btn btn-accent">Vendre mon bien</a>
+        <div class="filter-container">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">Tous les biens</button>
+                <button class="filter-btn" data-filter="maison">Maisons / Villas</button>
+                <button class="filter-btn" data-filter="appartement">Appartements</button>
+                <button class="filter-btn" data-filter="terrain">Terrains</button>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
+
 
     <main class="property-grid" id="property-list">
         
