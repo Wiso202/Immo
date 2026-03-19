@@ -1,4 +1,8 @@
-/* --- TABLETTES (Moins de 1024px) --- */
+/* ==========================================================
+   RESPONSIVE DESIGN - BENIN IMMO LUXE (SMART THEME)
+   ========================================================== */
+
+/* --- 1. TABLETTES (Moins de 1024px) --- */
 @media (max-width: 1024px) {
     .navbar {
         padding: 15px 5%;
@@ -12,44 +16,93 @@
     h1 { font-size: 3rem; }
 }
 
-/* --- SMARTPHONES LARGES (Moins de 768px) --- */
+/* --- 2. SMARTPHONES & TABLETTES PORTRAIT (Moins de 768px) --- */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Cache le menu classique pour un futur menu mobile */
+    
+    /* GESTION DE LA NAVIGATION SMART */
+    .nav-btn-desktop { 
+        display: none; /* Cache le bouton appel/devis sur mobile pour aérer */
     }
 
+    .menu-toggle { 
+        display: block; 
+        cursor: pointer; 
+        z-index: 1001; 
+    }
+
+    .menu-toggle .bar {
+        display: block; 
+        width: 25px; 
+        height: 3px; 
+        margin: 5px auto;
+        background-color: var(--primary); 
+        transition: 0.3s;
+    }
+
+    .nav-links {
+        position: fixed; 
+        top: 0; 
+        left: -100%; /* Menu caché à gauche par défaut */
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(15px); /* Effet flou moderne */
+        -webkit-backdrop-filter: blur(15px);
+        width: 100%; 
+        height: 100vh;
+        padding-top: 100px; 
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000; 
+        display: flex !important; /* Force l'affichage pour le contrôle JS */
+    }
+
+    .nav-links.active { 
+        left: 0; /* Le menu glisse sur l'écran au clic */
+    }
+
+    .nav-links li { 
+        margin: 15px 0; 
+        font-size: 1.2rem; 
+        font-weight: 700; 
+        text-align: center;
+    }
+
+    /* Animation du bouton Burger se transformant en Croix (X) */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+
+    /* MISE EN PAGE DU CONTENU */
     .hero-content h1 {
         font-size: 2.5rem;
     }
 
     .property-grid {
-        grid-template-columns: 1fr; /* 1 seule colonne (plein écran) */
+        grid-template-columns: 1fr; /* 1 seule colonne pour les maisons */
+        gap: 25px;
     }
 
-    .res-container {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr;
+    .res-container, .contact-container, .contact-wrapper {
+        grid-template-columns: 1fr; /* Grilles de contact sur 1 colonne */
         gap: 30px;
     }
 
-    /* On réduit les paddings pour gagner de la place */
-    section {
+    section, .section-padding {
         padding: 60px 5%;
     }
 }
 
-/* --- PETITS SMARTPHONES (Moins de 480px) --- */
+/* --- 3. PETITS SMARTPHONES (Moins de 480px) --- */
 @media (max-width: 480px) {
     .logo {
         font-size: 1.2rem;
     }
 
-    .btn {
-        width: 100%; /* Les boutons prennent toute la largeur pour cliquer facilement avec le pouce */
+    /* Boutons en pleine largeur pour faciliter le clic au pouce */
+    .btn, .property-card .btn {
+        width: 100%; 
         text-align: center;
+        padding: 16px;
     }
 
     .property-card {
@@ -60,8 +113,8 @@
         font-size: 1.2rem;
     }
 
-    /* On ajuste le bouton WhatsApp pour qu'il ne cache pas trop de texte */
-    .whatsapp-btn {
+    /* Ajustement du bouton flottant WhatsApp */
+    .whatsapp-float, .whatsapp-btn {
         width: 50px;
         height: 50px;
         bottom: 20px;
@@ -70,37 +123,14 @@
     }
 }
 
-/* --- OPTIMISATION POUR LE MODE PAYSAGE --- */
+/* --- 4. OPTIMISATION MODE PAYSAGE (Horizontal) --- */
 @media (max-height: 500px) {
     .hero {
-        height: 120vh; /* On agrandit la hauteur si le téléphone est à l'horizontale */
+        height: 120vh; /* Augmente la hauteur pour éviter que le texte soit coupé */
     }
-}
-@media (max-width: 768px) {
-    .nav-btn-desktop { display: none; }
-
-    .menu-toggle { display: block; cursor: pointer; z-index: 1001; }
-    .menu-toggle .bar {
-        display: block; width: 25px; height: 3px; margin: 5px auto;
-        background-color: var(--primary); transition: 0.3s;
-    }
-
+    
     .nav-links {
-        position: fixed; top: 0; left: -100%;
-        flex-direction: column;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(15px); /* Effet Smart flou */
-        width: 100%; height: 100vh;
-        padding-top: 100px; transition: 0.5s;
-        z-index: 1000; display: flex !important;
+        padding-top: 60px; /* Moins de padding haut si l'écran est court */
+        overflow-y: auto;  /* Permet de scroller dans le menu si besoin */
     }
-
-    .nav-links.active { left: 0; }
-
-    .nav-links li { margin: 15px 0; font-size: 1.2rem; font-weight: 700; }
-
-    /* Animation du burger en croix */
-    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
