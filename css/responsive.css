@@ -76,3 +76,31 @@
         height: 120vh; /* On agrandit la hauteur si le téléphone est à l'horizontale */
     }
 }
+@media (max-width: 768px) {
+    .nav-btn-desktop { display: none; }
+
+    .menu-toggle { display: block; cursor: pointer; z-index: 1001; }
+    .menu-toggle .bar {
+        display: block; width: 25px; height: 3px; margin: 5px auto;
+        background-color: var(--primary); transition: 0.3s;
+    }
+
+    .nav-links {
+        position: fixed; top: 0; left: -100%;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(15px); /* Effet Smart flou */
+        width: 100%; height: 100vh;
+        padding-top: 100px; transition: 0.5s;
+        z-index: 1000; display: flex !important;
+    }
+
+    .nav-links.active { left: 0; }
+
+    .nav-links li { margin: 15px 0; font-size: 1.2rem; font-weight: 700; }
+
+    /* Animation du burger en croix */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
