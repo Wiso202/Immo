@@ -1,230 +1,132 @@
-/* ==========================================================
-   MAIN CSS - BENIN IMMO LUXE (SMART & MODERN STYLE)
-   ========================================================== */
-
-/* --- NAVIGATION SMART --- */
+/* --- NAVIGATION --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
-    background: var(--glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    position: fixed; /* Flotte au-dessus du contenu */
+    background: var(--white);
+    position: sticky;
     top: 0;
-    width: 100%;
     z-index: 1000;
-    transition: var(--transition);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Style quand on scrolle (via JS) */
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    padding: 15px 8%;
-    box-shadow: var(--shadow-smart);
-    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 900;
-    color: var(--primary);
+    color: var(--primary-color);
     letter-spacing: -1px;
 }
 
-.logo span { 
-    color: var(--accent); 
-    background: linear-gradient(to right, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+.logo span { color: var(--accent-color); }
 
 .nav-links {
     display: flex;
-    gap: 35px;
-    align-items: center;
+    gap: 30px;
 }
 
-.nav-links a {
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- BOUTONS --- */
+.btn {
+    padding: 12px 25px;
+    border-radius: 5px;
     font-weight: 600;
-    font-size: 0.95rem;
-    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
 }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: var(--primary);
-    transition: var(--transition);
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* --- HERO SECTION AVEC IMAGE --- */
-.hero-smart {
-    position: relative;
-    height: 90vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    background-image: url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.3));
-    z-index: 1;
-}
-
-.hero-container {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    padding: 0 5%;
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 /* --- CARTES DE BIENS (GRID) --- */
 .property-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 40px;
-    padding: 80px 8%;
-    background-color: var(--bg-soft);
+    gap: 30px;
+    padding: 50px 8%;
 }
 
 .property-card {
-    background: white;
-    border-radius: var(--radius-lg);
+    background: var(--white);
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--shadow-smart);
+    box-shadow: var(--shadow);
     transition: var(--transition);
-    border: 1px solid rgba(0,0,0,0.03);
 }
 
 .property-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
 }
 
 .property-image {
-    height: 280px;
+    height: 250px;
     position: relative;
-    overflow: hidden;
 }
 
 .property-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.property-card:hover .property-image img {
-    transform: scale(1.1);
 }
 
 .badge {
     position: absolute;
     top: 20px;
     left: 20px;
-    background: var(--primary);
+    background: var(--accent-color);
     color: white;
-    padding: 6px 18px;
-    font-size: 0.75rem;
+    padding: 5px 15px;
+    font-size: 0.8rem;
     font-weight: 700;
     border-radius: 50px;
-    backdrop-filter: blur(5px);
-    z-index: 10;
 }
 
 .property-info {
-    padding: 30px;
+    padding: 25px;
 }
 
 .property-price {
-    color: var(--primary);
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 5px;
-}
-
-.property-info h3 {
-    font-size: 1.25rem;
-    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin-bottom: 10px;
 }
 
 .property-features {
     display: flex;
-    justify-content: space-between;
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid #f1f5f9;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: var(--text-light);
 }
 
-.property-features span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-/* --- WHATSAPP SMART BUTTON --- */
-.whatsapp-float {
+/* --- WHATSAPP FLOATING BUTTON --- */
+.whatsapp-btn {
     position: fixed;
-    bottom: 35px;
-    right: 35px;
-    background: #25d366;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
     color: white;
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
-    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     z-index: 1000;
-    transition: var(--transition);
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.15) rotate(10deg);
-}
-
-/* --- UTILITAIRES --- */
-.text-gradient-white {
-    background: linear-gradient(to right, #ffffff, #cbd5e1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.btn-glass {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-}
-
-.btn-glass:hover {
-    background: white;
-    color: var(--primary);
 }
