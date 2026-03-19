@@ -90,14 +90,40 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">BENIN<span>IMMO</span></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="biens.html">Propriétés</a></li>
-            <li><a href="publier.html">Vendre</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="logo">BENIN<span>IMMO</span></div>
+    
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="biens.html">Propriétés</a></li>
+        <li><a href="publier.html">Vendre un bien</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <div class="nav-contact nav-btn-desktop">
+        <a href="tel:+2290140434120" class="btn btn-primary">Appeler l'expert</a>
+    </div>
+</nav>
+
+   <header class="hero" style="padding-top: 150px; padding-bottom: 80px; text-align: center; background: radial-gradient(circle at top right, #eef2ff, #ffffff);">
+    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 5%;">
+        <span style="background: rgba(99, 102, 241, 0.1); color: var(--primary); padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Expertise Immobilière au Bénin</span>
+        
+        <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-top: 20px;" class="text-gradient">Trouvez la propriété de vos rêves.</h1>
+        
+        <p style="color: var(--text-muted); font-size: 1.2rem; margin: 25px 0 40px;">Découvrez une sélection exclusive de villas, parcelles et appartements de luxe à Cotonou, Calavi et Ouidah.</p>
+        
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="biens.html" class="btn btn-primary">Explorer les biens</a>
+            <a href="publier.html" class="btn btn-accent">Vendre mon bien</a>
+        </div>
+    </div>
+</header>
 
     <main class="details-container">
         
